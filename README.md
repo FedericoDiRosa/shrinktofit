@@ -1,5 +1,5 @@
 # ShrinkToFit.js
-A very light jQuery plugin (only 685 bytes minified) that shrinks text to fit the parent container.
+A very light jQuery plugin (only 604 bytes minified) that shrinks text to fit the parent container.
 
 This is very handy when dealing with long headings. People speaking nordic languages may know exactly what I am talking about.
 

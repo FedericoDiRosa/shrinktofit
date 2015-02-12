@@ -21,9 +21,6 @@
 
     			var $this = $(this);
 
-    			if ($this.data('ShrinkToFit_s') === undefined)
-    				$this.data('ShrinkToFit_s', $this.css('font-size'));
-
     			var defaults = {
     				min: '0px',
     				wrap: true
