@@ -13,59 +13,59 @@
 
     $.fn.ShrinkToFit = function( options ) {
 
-    	var _ = this;
+        var _ = this;
 
-    	function shrink() {
+        function shrink() {
 
-    		_.each(function() {
+            _.each(function() {
 
-    			var $this = $(this);
+                var $this = $(this);
 
-    			var defaults = {
-    				min: '0px',
-    				wrap: true
-    			};
+                var defaults = {
+                    min: '0px',
+                    wrap: true
+                };
 
-    			var settings = $.extend(defaults, options);
+                var settings = $.extend(defaults, options);
 
-				if (!settings.wrap) {
-					$this.css('white-space','nowrap');
-				}
+                if (!settings.wrap) {
+                    $this.css('white-space','nowrap');
+                }
 
-    			function getElementWidth(){
-    				var width = $this.css('display','inline-block').width();
-    				$this.css('display','');
-    				return width;
-    			}
+                function getElementWidth(){
+                    var width = $this.css('display','inline-block').width();
+                    $this.css('display','');
+                    return width;
+                }
 
-    			function getParentWidth(){
-    				var width = $this.parent().css('display','block').width();
-    				$this.parent().css('display','');
-    				return width;
-    			}
+                function getParentWidth(){
+                    var width = $this.parent().css('display','block').width();
+                    $this.parent().css('display','');
+                    return width;
+                }
 
-    			$this.e = getElementWidth();
-    			$this.p = getParentWidth();
+                $this.e = getElementWidth();
+                $this.p = getParentWidth();
 
-				if ($this.e < $this.p) {
-					$this.css('font-size', '');
-					$this.e = getElementWidth();
-					$this.p = getParentWidth();
-				}
+                if ($this.e < $this.p) {
+                    $this.css('font-size', '');
+                    $this.e = getElementWidth();
+                    $this.p = getParentWidth();
+                }
 
-    			while ($this.e > $this.p) {
-    				if ($this.css('font-size') == settings.min) break;
-    				$this.css('font-size', parseInt($this.css('font-size')) - 1 + 'px');
-    				$this.e = getElementWidth();
-    				$this.p = getParentWidth();
-    			}
+                while ($this.e > $this.p) {
+                    if ($this.css('font-size') == settings.min) break;
+                    $this.css('font-size', parseInt($this.css('font-size')) - 1 + 'px');
+                    $this.e = getElementWidth();
+                    $this.p = getParentWidth();
+                }
 
-    		});
+            });
 
-    	}
+        }
 
-    	$(window).on('resize', shrink());
-    	$(document).on('ready', shrink());
+        $(window).on('resize', shrink());
+        $(document).on('ready', shrink());
 
     };
 
