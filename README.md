@@ -23,7 +23,7 @@ $('h1').ShrinkToFit({
 jQuery 1.2.3
 
 ## Browsers compatibility
-- IE6+
+- IE8+
 - Chrome
 - Firefox
 - Safari
